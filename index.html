@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>To-Do-List</title>
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+<body>
+
+	<div class="container my-5">
+  <h1 class="text-center">To-do List</h1>
+
+  <div class="row mt-5 gy-4">
+    <!-- To Do -->
+    <div class="col-12 col-md-4">
+      <div class="border text-center p-3 rounded">
+        <h3>To Do</h3>
+        <div class="border p-2 mb-2 rounded d-none">
+          <textarea class="form-control text-center mb-3" rows="5"></textarea>
+
+          <div class="d-flex justify-content-center mb-3">
+            <div class="border warna p-2 rounded">
+              <ul class="d-flex list-unstyled gap-2 m-0">
+                <li><div class="kotak-1"></div></li>
+                <li><div class="kotak-2"></div></li>
+                <li><div class="kotak-3"></div></li>
+              </ul>
+            </div>
+          </div>
+
+          
+        </div>
+		<button class="btn btn-primary w-100">Add Cart</button>
+      </div>
+    </div>
+
+    <!-- Work -->
+    <div class="col-12 col-md-4">
+      <div class="border text-center p-3 rounded">
+        <h3>Work</h3>
+        <div class="border p-2 mb-2 rounded d-none">
+          <textarea class="form-control text-center mb-3" rows="5"></textarea>
+
+          <div class="d-flex justify-content-center mb-3">
+            <div class="border warna p-2 rounded">
+              <ul class="d-flex list-unstyled gap-2 m-0">
+                <li><div class="kotak-1"></div></li>
+                <li><div class="kotak-2"></div></li>
+                <li><div class="kotak-3"></div></li>
+              </ul>
+            </div>
+          </div>
+
+          
+        </div>
+		<button class="btn btn-primary w-100">Add Cart</button>
+      </div>
+    </div>
+
+    <!-- Goals -->
+    <div class="col-12 col-md-4">
+      <div class="border text-center p-3 rounded">
+        <h3>Goals</h3>
+        <div class="border p-2 mb-2 rounded d-none">
+          <textarea class="form-control text-center mb-3" rows="5"></textarea>
+
+          <div class="d-flex justify-content-center mb-3">
+            <div class="border warna p-2 rounded">
+              <ul class="d-flex list-unstyled gap-2 m-0">
+                <li><div class="kotak-1"></div></li>
+                <li><div class="kotak-2"></div></li>
+                <li><div class="kotak-3"></div></li>
+              </ul>
+            </div>
+          </div>
+
+          
+        </div>
+		<button class="btn btn-primary w-100">Add Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional: Task List -->
+  <ul id="listTask" class="mt-4"></ul>
+</div>
+
+
+	<script>
+		const inputText = document.getElementById('inputText');
+		const listText = document.getElementById('listTask');
+		const days = document.getElementById('itemDays');
+
+		// console.log(days);
+
+		setInterval(myTimer,1000);
+
+		function myTimer()
+		{
+			const d = new Date();
+			document.getElementById("date").innerHTML = d.toLocaleTimeString();
+		}
+		
+
+		listText.addEventListener('click',function(ev){
+			if(ev.target.tagName === 'LI'){
+				ev.target.classList.toggle('checked');
+			}
+		}, false);
+		
+
+		function addTask(){
+
+
+			const newDays = days.value;
+			const newTaks = inputText.value.trim();
+				if(newTaks !== ''){
+					const listItem = document.createElement('li');
+					listItem.textContent = `${newTaks} - ${newDays}`;
+
+					console.log(listItem);
+
+					const listDays = document.querySelectorAll('select');
+					listDays.textContent = newDays;
+
+					console.log(listDays);
+					// days.addEventListener('click', () => {
+
+					// })
+
+					listItem.addEventListener('click', () => {
+						listItem.classList.toggle('completed');
+					});
+
+
+					const buttonDelete = document.createElement('button');
+					buttonDelete.textContent = 'Delete';
+					buttonDelete.style.marginLeft = '10px';
+					buttonDelete.addEventListener('click', (event) => {
+						event.stopPropagation();
+						listItem.remove();
+					});
+
+
+				
+
+				listItem.appendChild(buttonDelete);
+
+				listText.appendChild(listItem);
+
+				inputText.value = '';
+				}
+			}
+	</script>
+
+</body>
+</html>
