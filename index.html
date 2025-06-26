@@ -54,8 +54,10 @@
       <div class="col-12 col-md-4">
         <div class="border text-center p-3 rounded">
           <h3>Work</h3>
+          <ul id="listWork">
+          </ul>
           <div class="border p-2 mb-2 rounded d-none" id="work">
-            <textarea class="form-control text-center mb-3" rows="5"></textarea>
+            <textarea class="form-control text-center mb-3" rows="5" id="inputWork"></textarea>
 
             <div class="d-flex justify-content-center mb-3">
               <div class="border warna p-2 rounded">
@@ -75,7 +77,7 @@
 
 
           </div>
-          <button class="btn btn-primary w-100" id="btn-work">Add Cart</button>
+          <button class="btn btn-primary w-100" id="btn-work" onclick="addWork()">Add Cart</button>
         </div>
       </div>
 
@@ -83,8 +85,10 @@
       <div class="col-12 col-md-4">
         <div class="border text-center p-3 rounded">
           <h3>Goals</h3>
+          <ul id="listGoals">
+          </ul>
           <div class="border p-2 mb-2 rounded d-none" id="goals">
-            <textarea class="form-control text-center mb-3" rows="5"></textarea>
+            <textarea class="form-control text-center mb-3" rows="5" id="inputGoals"></textarea>
 
             <div class="d-flex justify-content-center mb-3">
               <div class="border warna p-2 rounded">
@@ -104,7 +108,7 @@
 
 
           </div>
-          <button class="btn btn-primary w-100" id="btn-goals">Add Cart</button>
+          <button class="btn btn-primary w-100" id="btn-goals" onclick="addGoals()">Add Cart</button>
         </div>
       </div>
     </div>

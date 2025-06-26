@@ -51,8 +51,12 @@ $(document).ready(function(){
     });
 });
 
-const inputText = document.getElementById('inputText');
-const listText = document.getElementById('listTask');
+const inputText     = document.getElementById('inputText');
+const listText      = document.getElementById('listTask');
+const inputWork     = document.getElementById('inputWork');
+const listWork      = document.getElementById('listWork');
+const inputGoals    = document.getElementById('inputGoals');
+const listGoals     = document.getElementById('listGoals');
 // const days = document.getElementById('itemDays');
 
 // // console.log(days);
@@ -76,10 +80,13 @@ function addTask() {
 
 
     // const newDays = days.value;
+    
     const newTaks = inputText.value.trim();
     if (newTaks !== '') {
         const listItem = document.createElement('li');
         listItem.textContent = newTaks;
+        // listItem.textContent = newWork;
+        
         listItem.classList.add('li_task');
 
         console.log(listItem);
@@ -109,8 +116,63 @@ function addTask() {
 
         listText.appendChild(listItem);
 
+        // listWork.appendChild(listItem);
+
         inputText.value = '';
     }
-
     
 }
+
+function addWork() {
+
+        const newWork = inputWork.value.trim();
+        if(newWork !== ''){
+            const listItem = document.createElement('li');
+            listItem.textContent = newWork;
+
+            console.log(listItem);
+
+            const buttonDelete = document.createElement('button');
+            buttonDelete.textContent = 'delete';
+            buttonDelete.style.marginLeft = '10px';
+            buttonDelete.addEventListener('click', (event) => {
+                event.stopPropagation();
+                listItem.remove();
+            });
+
+            listItem.appendChild(buttonDelete);
+
+            listWork.appendChild(listItem);
+
+            inputWork.value = '';
+        }
+    }
+
+function addGoals(){
+    
+    const newGoals = inputGoals.value.trim();
+
+    if(newGoals !== ''){
+        const listItem = document.createElement('li');
+        listItem.textContent = newGoals;
+
+        console.log(listItem);
+
+        const buttonDelete = document.createElement('button');
+        buttonDelete.textContent = 'button';
+        buttonDelete.style.marginLeft = '10px';
+        buttonDelete.addEventListener('click', (event) => {
+            event.stopPropagation;
+            listItem.remove();
+        });
+
+        listItem.appendChild(buttonDelete);
+
+        listGoals.appendChild(listItem);
+
+        inputGoals.value = '';
+    }
+}
+
+
+ 
