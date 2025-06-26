@@ -129,6 +129,7 @@ function addWork() {
         if(newWork !== ''){
             const listItem = document.createElement('li');
             listItem.textContent = newWork;
+            listItem.classList.add('li_task');
 
             console.log(listItem);
 
@@ -155,6 +156,7 @@ function addGoals(){
     if(newGoals !== ''){
         const listItem = document.createElement('li');
         listItem.textContent = newGoals;
+        listItem.classList.add('li_task');
 
         console.log(listItem);
 
