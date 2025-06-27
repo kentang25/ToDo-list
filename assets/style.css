@@ -47,8 +47,8 @@ body{
 }
 
 .li_task {
-  background-color: blue;
-  color: white;
+  /* background-color: blue; */
+  color: black;
   padding: 10px;
   margin-top: 5px;
   margin-bottom: 10px;

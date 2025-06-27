@@ -1,56 +1,3 @@
-$(document).ready(function(){
-    $('#btn-todo').click(function(){
-        $('#to_do').toggleClass('d-none');
-    });
-
-    $('#btn-work').click(function(){
-        $('#work').toggleClass('d-none');
-    });
-
-    $('#btn-goals').click(function(){
-        $('#goals').toggleClass('d-none');
-    });
-
-    $('#red1').click(function(){
-        $('#to_do').css('background-color', 'red');
-    });
-
-    $('#yellow1').click(function(){
-        $('#to_do').css('background-color', 'yellow');
-    });
-
-    $('#blue1').click(function(){
-        $('#to_do').css('background-color', 'blue');
-    });
-
-    // work
-    $('#red2').click(function(){
-        $('#work').css('background-color', 'red');
-    });
-
-    $('#yellow2').click(function(){
-        $('#work').css('background-color', 'yellow');
-    });
-
-    $('#blue2').click(function(){
-        $('#work').css('background-color', 'blue');
-    });
-
-    // goals
-
-    $('#red3').click(function(){
-        $('#goals').css('background-color', 'red');
-    });
-
-    $('#yellow3').click(function(){
-        $('#goals').css('background-color', 'yellow');
-    });
-
-    $('#blue3').click(function(){
-        $('#goals').css('background-color', 'blue');
-    });
-});
-
 const inputText     = document.getElementById('inputText');
 const listText      = document.getElementById('listTask');
 const inputWork     = document.getElementById('inputWork');
@@ -157,6 +104,7 @@ function addGoals(){
         const listItem = document.createElement('li');
         listItem.textContent = newGoals;
         listItem.classList.add('li_task');
+        
 
         console.log(listItem);
 
@@ -175,6 +123,65 @@ function addGoals(){
         inputGoals.value = '';
     }
 }
+
+$(document).ready(function(){
+    $('#btn-todo').click(function(){
+        $('#to_do').toggleClass('d-none');
+    });
+
+    $('#btn-work').click(function(){
+        $('#work').toggleClass('d-none');
+    });
+
+    $('#btn-goals').click(function(){
+        $('#goals').toggleClass('d-none');
+    });
+
+    // --- warna ---
+
+    $('#red1').click(function(){
+        $('#to_do').css('background-color', 'red');
+    });
+
+    $('#yellow1').click(function(){
+        $('#to_do').css('background-color', 'yellow');
+    });
+
+    $('#blue1').click(function(){
+        $('#to_do').css('background-color', 'blue');
+    });
+
+    // work
+    $('#red2').click(function(){
+        $('#work').css('background-color', 'red');
+    });
+
+    $('#yellow2').click(function(){
+        $('#work').css('background-color', 'yellow');
+    });
+
+    $('#blue2').click(function(){
+        $('#work').css('background-color', 'blue');
+    });
+
+    // goals
+
+    $('#red3').click(function(){
+        $('#goals').css('background-color', 'red');
+    });
+
+    $('#yellow3').click(function(){
+        $('#goals').css('background-color', 'yellow');
+    });
+
+    $('#blue3').click(function(){
+        $('#goals').css('background-color', 'blue');
+    });
+
+    $('#red1').click(function(){
+        $('.li_task').css('background-color', 'red');
+    });
+});
 
 
  
