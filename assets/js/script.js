@@ -109,7 +109,7 @@ function addGoals(){
         console.log(listItem);
 
         const buttonDelete = document.createElement('button');
-        buttonDelete.textContent = 'button';
+        buttonDelete.textContent = 'delete';
         buttonDelete.style.marginLeft = '10px';
         buttonDelete.addEventListener('click', (event) => {
             event.stopPropagation;
@@ -204,6 +204,20 @@ $('[id^=red], [id^=yellow], [id^=blue]').click(function(){
     });
     $('#blue1').click(function(){
         $('#listTask').css({"background-color": "blue", "color": "white"});
+    });
+
+    $('[id^=red], [id^=yellow], [id^=blue]').click(function(){
+        let color = this.id.match(/^(red|yellow|blue)/)[0];
+        let targetList = {
+            '1' : '#listTask',
+            '2' : '#listWork',
+            '3' : '#listGoals'
+        }[this.id.slice(-1)];
+
+        $(targetList).css('background-color', color);
+
+        let textColor = (color === 'yellow') ? 'black' : 'white';
+        $(targetList).css('color',textColor);
     });
 });
 
