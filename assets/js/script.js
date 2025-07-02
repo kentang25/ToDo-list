@@ -137,49 +137,73 @@ $(document).ready(function(){
         $('#goals').toggleClass('d-none');
     });
 
+    // // --- warna ---
+
+    // $('#red1').click(function(){
+    //     $('#to_do').css('background-color', 'red');
+    // });
+
+    // $('#yellow1').click(function(){
+    //     $('#to_do').css('background-color', 'yellow');
+    // });
+
+    // $('#blue1').click(function(){
+    //     $('#to_do').css('background-color', 'blue');
+    // });
+
+    // // work
+    // $('#red2').click(function(){
+    //     $('#work').css('background-color', 'red');
+    // });
+
+    // $('#yellow2').click(function(){
+    //     $('#work').css('background-color', 'yellow');
+    // });
+
+    // $('#blue2').click(function(){
+    //     $('#work').css('background-color', 'blue');
+    // });
+
+    // // goals
+
+    // $('#red3').click(function(){
+    //     $('#goals').css('background-color', 'red');
+    // });
+
+    // $('#yellow3').click(function(){
+    //     $('#goals').css('background-color', 'yellow');
+    // });
+
+    // $('#blue3').click(function(){
+    //     $('#goals').css('background-color', 'blue');
+    // });
+
+    // --- warna method 2 ---
+
     // --- warna ---
+$('[id^=red], [id^=yellow], [id^=blue]').click(function(){
+    let color = this.id.match(/^(red|yellow|blue)/)[0];
+    let targetId = {
+        '1': '#to_do',
+        '2': '#work',
+        '3': '#goals'
+    }[this.id.slice(-1)];
+
+    $(targetId).css('background-color', color);
+});
+
+
+
+    // --- background-li ---
 
     $('#red1').click(function(){
-        $('#to_do').css('background-color', 'red');
+        $('#listTask').css({"background-color": "red", "color": "white"});
     });
-
     $('#yellow1').click(function(){
-        $('#to_do').css('background-color', 'yellow');
+        $('#listTask').css({"background-color": "yellow", "color": "black"});
     });
-
     $('#blue1').click(function(){
-        $('#to_do').css('background-color', 'blue');
-    });
-
-    // work
-    $('#red2').click(function(){
-        $('#work').css('background-color', 'red');
-    });
-
-    $('#yellow2').click(function(){
-        $('#work').css('background-color', 'yellow');
-    });
-
-    $('#blue2').click(function(){
-        $('#work').css('background-color', 'blue');
-    });
-
-    // goals
-
-    $('#red3').click(function(){
-        $('#goals').css('background-color', 'red');
-    });
-
-    $('#yellow3').click(function(){
-        $('#goals').css('background-color', 'yellow');
-    });
-
-    $('#blue3').click(function(){
-        $('#goals').css('background-color', 'blue');
-    });
-
-    $('#red1').click(function(){
-        $('.li_task').css('background-color', 'red');
+        $('#listTask').css({"background-color": "blue", "color": "white"});
     });
 });
 
